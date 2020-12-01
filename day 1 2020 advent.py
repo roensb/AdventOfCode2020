@@ -1,3 +1,5 @@
+import time
+start_time = time.time()
 
 def finder(values):
     for value in values:
@@ -20,3 +22,4 @@ for x in file :
 
 
 finder(values)
+print("--- %s seconds ---" % (time.time() - start_time))
