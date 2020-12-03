@@ -11,13 +11,13 @@ skippedIndex = 4
 for i, line in enumerate(file) :
     if i == 0:
         continue
-    length = len(line)
+    length = len(line.strip())
     for j, slope in enumerate(slopes):
         if j == skippedIndex and i%2:
             continue
         rights[j] += slope
-        if rights[j] >= length-1:
-            rights[j] = rights[j] - (length - 1)
+        if rights[j] >= length:
+            rights[j] = rights[j] - length
         if line[rights[j]] == "#":
             counts[j] +=1
 
