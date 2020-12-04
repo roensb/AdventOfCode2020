@@ -36,7 +36,6 @@ def checkValid(passport, ppList, numFalse):
 file = open("data.txt", "r")
 passport ={}
 ppList = []
-valid = ['byr','iyr','eyr','hgt','hcl','ecl','pid']
 numFalse = 0
 
 for i, line in enumerate(file):
