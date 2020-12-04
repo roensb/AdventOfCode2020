@@ -29,7 +29,6 @@ def checkValid(passport, ppList):
 file = open("data.txt", "r")
 passport ={}
 ppList = []
-numFalse = 0
 
 for i, line in enumerate(file):
     if line.strip() == "":
