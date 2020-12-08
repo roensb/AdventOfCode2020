@@ -38,7 +38,7 @@ class gameCon():
                 if i in checked:
                     continue
                 elif inst[0] == "jmp":
-                    self.instruct[i] = ["nop", inst[1]]
+                    self.instruct[i][0] = "nop"
                     val = self.execute()
                     self.accumulator = 0
                     if self.curInstruct == len(self.instruct):
@@ -49,7 +49,7 @@ class gameCon():
                         self.instruct = cp.deepcopy(copy)
                         break
                 elif inst[0] == "nop":
-                    self.instruct[i] = ["jmp", inst[1]]
+                    self.instruct[i][0] = "jmp"
                     val = self.execute()
                     self.accumulator = 0
                     if self.curInstruct == len(self.instruct):
