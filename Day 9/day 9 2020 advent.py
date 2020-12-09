@@ -11,7 +11,7 @@ def search(values, found):
             if end <= i:
                 continue
             if found == sum(values[i:end]):
-                result = values[i] + values[end-1]
+                result = min(values[i:end]) + max(values[i:end])
                 return result
 
 file = open("data.txt", "r")
