@@ -7,12 +7,12 @@ def Valid(values, target):
 
 def search(values, found):
     for i, value in enumerate(values):
-        for end in range(len(values)):
-            if end <= i:
-                continue
+        for end in range(i+1,len(values)):
             if found == sum(values[i:end]):
                 result = min(values[i:end]) + max(values[i:end])
                 return result
+            if found <= sum(values[i:end]):
+                break
 
 file = open("data.txt", "r")
 values = []
