@@ -1,3 +1,5 @@
+import time
+start_time = time.time()
 def Valid(values, target):
     for value in values:
         search = target - value
@@ -33,6 +35,7 @@ result = search(values, found)
 
 print ("P1:" +str(found))
 print ("P2:" +str(result))
+print("--- %s seconds ---" % (time.time() - start_time))
 
 
 
