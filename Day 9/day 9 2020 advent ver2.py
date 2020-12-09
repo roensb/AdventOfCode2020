@@ -1,6 +1,6 @@
 import time
 start_time = time.time()
-def Valid(values, target):
+def valid(values, target):
     for value in values:
         search = target - value
         if search in values:
