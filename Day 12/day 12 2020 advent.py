@@ -2,13 +2,13 @@
 class ship():
     def __init__(self):
         self.xy = [0,0]
-        self.waypoint = [1,10]
+        self.waypoint = [10,1]
         
     def convDir(self,direction):
-        switch = {"E": [0, 1],
-                  "N": [1, 0],
-                  "S": [-1, 0],
-                  "W": [0,-1]}
+        switch = {"E": [1, 0],
+                  "N": [0, 1],
+                  "S": [0, -1],
+                  "W": [-1,0]}
         if direction in switch:
             return switch[direction]
         
@@ -18,10 +18,10 @@ class ship():
             delta = int(value/90)
             if direction == "L":
                 for value in range(delta):
-                    self.waypoint = [self.waypoint[1], self.waypoint[0]*-1] 
+                    self.waypoint = [self.waypoint[1]*-1, self.waypoint[0]] 
             if direction == "R":
                 for value in range(delta):
-                    self.waypoint = [self.waypoint[1]*-1, self.waypoint[0]]
+                    self.waypoint = [self.waypoint[1], self.waypoint[0]*-1]
         elif direction == "F":
             self.xy = [self.xy[0] + value*self.waypoint[0], self.xy[1] + value*self.waypoint[1]] 
 
@@ -37,10 +37,7 @@ direction =[]
 ship = ship()
 for line in file:
     line = line.strip()
-    print (line)
     ship.move(line[0], int(line[1:]))
-    print (ship.waypoint)
-    print (ship.xy)
 
 print (ship.getDist())
     
