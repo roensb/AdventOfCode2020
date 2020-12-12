@@ -9,8 +9,7 @@ class ship():
                   "N": [0, 1],
                   "S": [0, -1],
                   "W": [-1,0]}
-        if direction in switch:
-            return switch[direction]
+        return switch[direction]
         
     def move(self, direction, value):
         rotate = ["L", "R"]
