@@ -10,7 +10,7 @@ remain = []
 for i, bus in enumerate(buses):
     if bus != "x":
       remain.append(int(bus)-i)
-      
+
 for value in busesInt:
     if math.ceil(time/int(value)) < math.ceil(time/closest):
         closest = int(value)
